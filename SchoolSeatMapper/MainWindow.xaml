@@ -1,0 +1,87 @@
+﻿<Window
+    x:Class="SchoolSeatMapper.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SchoolSeatMapper"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    Loaded="Window_Loaded"
+    mc:Ignorable="d">
+    <Grid>
+        <ui:NavigationView
+            x:Name="Navigation"
+            IsBackButtonVisible="Auto"
+            PaneDisplayMode="LeftMinimal">
+            <ui:NavigationView.PaneHeader>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Border
+                        Grid.Column="0"
+                        Width="30"
+                        Height="30"
+                        Margin="6,0,0,0"
+                        CornerRadius="20">
+                        <Border.Background>
+                            <SolidColorBrush Color="ForestGreen" />
+                        </Border.Background>
+                    </Border>
+                    <StackPanel
+                        Grid.Column="1"
+                        Margin="12,0,0,0"
+                        VerticalAlignment="Center">
+                        <TextBlock x:Name="box_loginid" Text="ID" />
+                        <TextBlock
+                            x:Name="msgbox_login"
+                            Foreground="DarkRed"
+                            Text="모든 기능을 사용하려면 로그인하세요" />
+                        <Button
+                            x:Name="login_btn"
+                            HorizontalAlignment="Right"
+                            Click="login_btn_Click"
+                            Content="로그인" />
+                    </StackPanel>
+                </Grid>
+            </ui:NavigationView.PaneHeader>
+            <ui:NavigationView.MenuItems>
+                <!--<ui:NavigationViewItem Content="홈" NavigationCacheMode="Enabled">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Home24" />
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>-->
+                <ui:NavigationViewItem
+                    Content="자리 배정"
+                    NavigationCacheMode="Enabled"
+                    TargetPageType="{x:Type local:SeatMapper}">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Apps24" />
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem
+                    Content="설정"
+                    NavigationCacheMode="Enabled"
+                    TargetPageType="{x:Type local:Settings}">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Settings24" />
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+            </ui:NavigationView.MenuItems>
+            <ui:NavigationView.FooterMenuItems>
+                <ui:NavigationViewItem
+                    Content="정보"
+                    NavigationCacheMode="Enabled"
+                    TargetPageType="{x:Type local:Info}">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="Info24" />
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+            </ui:NavigationView.FooterMenuItems>
+        </ui:NavigationView>
+    </Grid>
+</Window>

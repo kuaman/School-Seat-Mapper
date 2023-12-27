@@ -1,0 +1,104 @@
+﻿<UserControl
+    x:Class="SchoolSeatMapper.Info"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SchoolSeatMapper"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentControl>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="18*" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="32*" />
+            </Grid.RowDefinitions>
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                FontFamily="Hancom Gothic"
+                FontSize="24"
+                TextAlignment="Center"
+                TextWrapping="Wrap"><Run Language="ko-kr" Text="자리 배정 프로그램" /></TextBlock>
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Stretch"
+                FontFamily="Hancom Gothic"
+                FontSize="14"
+                TextWrapping="Wrap">
+                <Run /><LineBreak /><Run /><LineBreak />
+                <Run Text="제작 : 김민서 (kuaman)" /><LineBreak /><LineBreak />
+                <Run
+                    BaselineAlignment="Subscript"
+                    Text="제작기간 : 2023.12.16 ~ ?"
+                    ToolTip="제작기간은 첫 정식 릴리즈 기준" />
+                *<LineBreak /><LineBreak />
+                <Run Text="개발 목적 : 자리 배정 프로그램(교육용)" /><LineBreak /><LineBreak />
+                <Run Text="개발 변혁 : " /><Hyperlink
+                    MouseEnter="OnMouseEnter"
+                    MouseLeave="OnMouseLeave"
+                    NavigateUri="https://github.com/kuaman/Progretter-code"
+                    RequestNavigate="Hyperlink_RequestNavigate"
+                    TextDecorations="None">
+                    SchoolSeatMapper Github
+                </Hyperlink><LineBreak /><LineBreak />
+                <Run Text="Special Thanks : " /><Hyperlink
+                    MouseEnter="OnMouseEnter"
+                    MouseLeave="OnMouseLeave"
+                    NavigateUri="https://stackoverflow.com/"
+                    RequestNavigate="Hyperlink_RequestNavigate"
+                    TextDecorations="None">
+                    Stack Overflow
+                </Hyperlink><Run Text=", " />
+                <Hyperlink
+                    MouseEnter="OnMouseEnter"
+                    MouseLeave="OnMouseLeave"
+                    NavigateUri="https://www.sourcecodester.com/c/11758/tetris-c-wpf.html"
+                    RequestNavigate="Hyperlink_RequestNavigate"
+                    TextDecorations="None">
+                    Tetris by Antonis Ntit
+                </Hyperlink><Run Text=", " />
+                <Hyperlink
+                    MouseEnter="OnMouseEnter"
+                    MouseLeave="OnMouseLeave"
+                    NavigateUri="https://github.com/ravibpatel/AutoUpdater.NET"
+                    RequestNavigate="Hyperlink_RequestNavigate"
+                    TextDecorations="None">
+                    Autoupdater.NET
+                </Hyperlink><Run Text=", " /><LineBreak />
+                <Run Text="                             " /><Hyperlink
+                    MouseEnter="OnMouseEnter"
+                    MouseLeave="OnMouseLeave"
+                    NavigateUri="https://github.com/ClosedXML/ClosedXML"
+                    RequestNavigate="Hyperlink_RequestNavigate"
+                    TextDecorations="None">
+                    ClosedXML
+                </Hyperlink><Run Text=", " />
+                <Hyperlink
+                    MouseEnter="OnMouseEnter"
+                    MouseLeave="OnMouseLeave"
+                    NavigateUri="https://github.com/CommunityToolkit/WindowsCommunityToolkit"
+                    RequestNavigate="Hyperlink_RequestNavigate"
+                    TextDecorations="None">
+                    UWP Notifications
+                </Hyperlink><Run Text=", " />
+                <Hyperlink
+                    Cursor="Hand"
+                    MouseEnter="OnMouseEnter"
+                    MouseLeave="OnMouseLeave"
+                    NavigateUri="https://github.com/PixiEditor/ColorPicker"
+                    RequestNavigate="Hyperlink_RequestNavigate"
+                    TextDecorations="None">
+                    ColorPicker by PixiEditor
+                </Hyperlink>
+            </TextBlock>
+        </Grid>
+    </ContentControl>
+</UserControl>
