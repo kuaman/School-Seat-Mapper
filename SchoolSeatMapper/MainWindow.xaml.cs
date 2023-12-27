@@ -20,7 +20,7 @@ namespace SchoolSeatMapper
         public MainWindow()
         {
             InitializeComponent();
-            Uri BaseUri = new Uri("https://raw.githubusercontent.com/kuaman/School-Seat-Mapper/main/version.xml");
+            Uri BaseUri = new Uri("https://raw.githubusercontent.com/kuaman/School-Seat-Mapper/master/version.xml");
             AutoUpdater.AppCastURL = BaseUri.AbsoluteUri;
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
