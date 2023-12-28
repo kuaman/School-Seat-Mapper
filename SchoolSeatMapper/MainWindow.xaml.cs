@@ -33,7 +33,7 @@ namespace SchoolSeatMapper
                 Config.Set("seat_num", "0");
                 Config.Set("seat_available", "false");
                 Config.Set("seat_selected", "false");
-                Config.Set("auto_select", "0");
+                Config.Set("select_mode", "0");
                 Config.Set("login", "none");
                 Process.Start(Process.GetCurrentProcess().MainModule.FileName);
                 Application.Current.Shutdown();

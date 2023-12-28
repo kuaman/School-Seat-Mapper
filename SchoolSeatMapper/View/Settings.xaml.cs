@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace SchoolSeatMapper
 {
@@ -10,6 +11,7 @@ namespace SchoolSeatMapper
         public Settings()
         {
             InitializeComponent();
+            MessageBox.Show("Day+2 업데이트 예정 입니다.");
         }
     }
 }
