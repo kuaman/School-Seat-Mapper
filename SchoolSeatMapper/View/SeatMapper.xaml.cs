@@ -1,20 +1,6 @@
 ﻿using SchoolSeatMapper.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SchoolSeatMapper
 {
@@ -23,7 +9,7 @@ namespace SchoolSeatMapper
     /// </summary>
     public partial class SeatMapper : Page
     {
-        private int seat_mode = 0; 
+        private int seat_mode = 0;
         public SeatMapper()
         {
             InitializeComponent();
@@ -59,7 +45,7 @@ namespace SchoolSeatMapper
                 case 0:
                     SeatSelector seatSelector = new SeatSelector(ToInt(Config.Get("row")), ToInt(Config.Get("column")));
                     control.Content = seatSelector;
-                    mix_seat_btn.Content = "자리 ";
+                    mix_seat_btn.Content = "자리 선택";
                     seat_mode = 1;
                     break;
 

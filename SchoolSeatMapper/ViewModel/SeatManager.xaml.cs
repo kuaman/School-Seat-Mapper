@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Linq;
 
 namespace SchoolSeatMapper
 {
@@ -23,7 +20,7 @@ namespace SchoolSeatMapper
             }
             else
             {
-                SeatsFromString(Config.Get("seat_num"), Config.Get("seat_available"), Config.Get("seat_selected")) ;
+                SeatsFromString(Config.Get("seat_num"), Config.Get("seat_available"), Config.Get("seat_selected"));
             }
             InitializeComponent();
             // Set the data context of the window to this instance
@@ -33,7 +30,7 @@ namespace SchoolSeatMapper
         private void Generate_Seat(int row, int column)
         {
             Seats = new List<Seat> { };
-            for (int i = 1; i<=row*column; i++)
+            for (int i = 1; i <= row * column; i++)
             {
                 Seats.Add(new Seat { Number = i, Available = true, Selected = false });
             }
@@ -64,7 +61,7 @@ namespace SchoolSeatMapper
         {
             // 각 문자열을 ','를 기준으로 분할하여 배열로 변환
             string[] numbers = numberString.Split(',');
-/*            string[] availableValues = availableString.Split(',');*/
+            /*            string[] availableValues = availableString.Split(',');*/
             string[] selectedValues = selectedString.Split(',');
 
             // 분할된 값들을 사용하여 새로운 Seat 객체 리스트 생성

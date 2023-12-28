@@ -1,17 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Collections;
-using System.Linq;
-using System.Security.Permissions;
 
 namespace SchoolSeatMapper
 {
-    // A class that represents the main window of the application
     public partial class SeatSelector : UserControl
     {
-        public List<Seat> Seats1 { get; set; } // A list of seats to display
+        public List<Seat> Seats1 { get; set; }
         public int Row { get; set; }
         public int Column { get; set; }
 
@@ -28,30 +22,25 @@ namespace SchoolSeatMapper
                 MessageBox.Show("올바르게 저장했는지 확인하세요", "에러 발생!");
             }
             InitializeComponent();
-            // Set the data context of the window to this instance
             DataContext = this;
         }
 
-        // A method that handles the click event of the seat buttons
         private void SeatButton_Click(object sender, RoutedEventArgs e)
         {
-            // Get the button object from the sender
             Button button = (Button)sender;
-
-            // Get the seat object from the button's data context
             Seat seat = (Seat)button.DataContext;
-
             seat.Selected = !seat.Selected;
         }
 
         private void save_btn_Click(object sender, RoutedEventArgs e) // 엑셀로 바꿀 예정
         {
-/*            string num = String.Join(",", Seats1.Select(m => m.Number).ToArray());
-            string available = String.Join(",", Seats1.Select(m => m.Available).ToArray());
-            string selected = String.Join(",", Seats1.Select(m => m.Selected).ToArray());
-            Config.Set("seat_num", num);
-            Config.Set("seat_available", available);
-            Config.Set("seat_selected", selected);*/
+            MessageBox.Show("Day+2 업데이트 예정 입니다.");
+            /*            string num = String.Join(",", Seats1.Select(m => m.Number).ToArray());
+                        string available = String.Join(",", Seats1.Select(m => m.Available).ToArray());
+                        string selected = String.Join(",", Seats1.Select(m => m.Selected).ToArray());
+                        Config.Set("seat_num", num);
+                        Config.Set("seat_available", available);
+                        Config.Set("seat_selected", selected);*/
         }
 
         private void SeatsFromString(string numberString, string availableString, string selectedString)
@@ -66,7 +55,7 @@ namespace SchoolSeatMapper
 
             for (int i = 0; i < numbers.Length; i++)
             {
-                Seats1.Add(new Seat { Number = int.Parse(numbers[i]), Available = bool.Parse(availableValues[i]), Selected = bool.Parse(selectedValues[i])  });
+                Seats1.Add(new Seat { Number = int.Parse(numbers[i]), Available = bool.Parse(availableValues[i]), Selected = bool.Parse(selectedValues[i]) });
             }
         }
 
@@ -123,7 +112,7 @@ namespace SchoolSeatMapper
 
         private void Loose_Separate()
         {
-            List <int?> nums = new List <int?> ();
+            List<int?> nums = new List<int?>();
             List<int?> separate_num = new List<int?>();
             var query = from Seat seat in Seats1
                         select seat;
@@ -161,7 +150,7 @@ namespace SchoolSeatMapper
             return diagonalElements;
         }
 
-        private void separate_btn_Click(object sender, RoutedEventArgs e)
+        private void separate_btn_Click(object sender, RoutedEventArgs e) // 분리 버튼
         {
 
         }

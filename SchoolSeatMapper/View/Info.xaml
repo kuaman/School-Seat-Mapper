@@ -24,7 +24,7 @@
                 FontFamily="Hancom Gothic"
                 FontSize="24"
                 TextAlignment="Center"
-                TextWrapping="Wrap"><Run Language="ko-kr" Text="자리 배정 프로그램" /></TextBlock>
+                TextWrapping="Wrap"><Run Language="ko-kr" Text="자리 배정 프로그램 (School Seat Mapper)" /></TextBlock>
             <TextBlock
                 Grid.Row="2"
                 Grid.Column="1"
@@ -37,14 +37,14 @@
                 <Run Text="제작 : 김민서 (kuaman)" /><LineBreak /><LineBreak />
                 <Run
                     BaselineAlignment="Subscript"
-                    Text="제작기간 : 2023.12.16 ~ ?"
+                    Text="제작기간 : 2023.12.16 ~ 2023.12.29"
                     ToolTip="제작기간은 첫 정식 릴리즈 기준" />
                 *<LineBreak /><LineBreak />
                 <Run Text="개발 목적 : 자리 배정 프로그램(교육용)" /><LineBreak /><LineBreak />
                 <Run Text="개발 변혁 : " /><Hyperlink
                     MouseEnter="OnMouseEnter"
                     MouseLeave="OnMouseLeave"
-                    NavigateUri="https://github.com/kuaman/Progretter-code"
+                    NavigateUri="https://github.com/kuaman/School-Seat-Mapper"
                     RequestNavigate="Hyperlink_RequestNavigate"
                     TextDecorations="None">
                     SchoolSeatMapper Github
@@ -58,13 +58,14 @@
                     Stack Overflow
                 </Hyperlink><Run Text=", " />
                 <Hyperlink
+                    Cursor="Hand"
                     MouseEnter="OnMouseEnter"
                     MouseLeave="OnMouseLeave"
-                    NavigateUri="https://www.sourcecodester.com/c/11758/tetris-c-wpf.html"
+                    NavigateUri="https://github.com/lepoco/wpfui"
                     RequestNavigate="Hyperlink_RequestNavigate"
                     TextDecorations="None">
-                    Tetris by Antonis Ntit
-                </Hyperlink><Run Text=", " />
+                    WPF UI by lepo.co
+                </Hyperlink><Run Text=", " /><LineBreak /><Run Text="                            " />
                 <Hyperlink
                     MouseEnter="OnMouseEnter"
                     MouseLeave="OnMouseLeave"
@@ -72,31 +73,14 @@
                     RequestNavigate="Hyperlink_RequestNavigate"
                     TextDecorations="None">
                     Autoupdater.NET
-                </Hyperlink><Run Text=", " /><LineBreak />
-                <Run Text="                             " /><Hyperlink
+                </Hyperlink><Run Text=", " />
+                <Hyperlink
                     MouseEnter="OnMouseEnter"
                     MouseLeave="OnMouseLeave"
                     NavigateUri="https://github.com/ClosedXML/ClosedXML"
                     RequestNavigate="Hyperlink_RequestNavigate"
                     TextDecorations="None">
                     ClosedXML
-                </Hyperlink><Run Text=", " />
-                <Hyperlink
-                    MouseEnter="OnMouseEnter"
-                    MouseLeave="OnMouseLeave"
-                    NavigateUri="https://github.com/CommunityToolkit/WindowsCommunityToolkit"
-                    RequestNavigate="Hyperlink_RequestNavigate"
-                    TextDecorations="None">
-                    UWP Notifications
-                </Hyperlink><Run Text=", " />
-                <Hyperlink
-                    Cursor="Hand"
-                    MouseEnter="OnMouseEnter"
-                    MouseLeave="OnMouseLeave"
-                    NavigateUri="https://github.com/PixiEditor/ColorPicker"
-                    RequestNavigate="Hyperlink_RequestNavigate"
-                    TextDecorations="None">
-                    ColorPicker by PixiEditor
                 </Hyperlink>
             </TextBlock>
         </Grid>

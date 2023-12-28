@@ -15,6 +15,7 @@
         <ui:NavigationView
             x:Name="Navigation"
             IsBackButtonVisible="Auto"
+            OpenPaneLength="200"
             PaneDisplayMode="LeftMinimal">
             <ui:NavigationView.PaneHeader>
                 <Grid>
@@ -40,7 +41,7 @@
                         <TextBlock
                             x:Name="msgbox_login"
                             Foreground="DarkRed"
-                            Text="모든 기능을 사용하려면 로그인하세요" />
+                            Text="모든 기능을 사용하려면" />
                         <Button
                             x:Name="login_btn"
                             HorizontalAlignment="Right"
