@@ -13,8 +13,7 @@ namespace SchoolSeatMapper
         public MainWindow()
         {
             InitializeComponent();
-            Uri BaseUri = new Uri("https://raw.githubusercontent.com/kuaman/School-Seat-Mapper/master/version.xml");
-            AutoUpdater.AppCastURL = BaseUri.AbsoluteUri;
+            AutoUpdater.Start("https://raw.githubusercontent.com/kuaman/School-Seat-Mapper/master/version.xml");
         }
 
         public readonly string Cfpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\SchoolSeatMapper";
