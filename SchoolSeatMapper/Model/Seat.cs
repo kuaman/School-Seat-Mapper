@@ -6,14 +6,14 @@ namespace SchoolSeatMapper
     // A class that represents a seat with properties and events
     public class Seat : INotifyPropertyChanged
     {
-        private int? number; // The seat number
+        private string? name; // The seat Name
         private bool available; // The seat availability
         private bool selected; // The seat selection status
 
-        public int? Number
+        public string? Name
         {
-            get { return number; }
-            set { number = value; OnPropertyChanged(); }
+            get { return name; }
+            set { name = value; OnPropertyChanged(); }
         }
 
         public bool Available

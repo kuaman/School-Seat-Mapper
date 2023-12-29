@@ -18,6 +18,12 @@ namespace SchoolSeatMapper
 
         private async void gen_seat_btn_Click(object sender, RoutedEventArgs e)
         {
+            Config.Set("row", "0");
+            Config.Set("column", "0");
+            Config.Set("seat_num", "0");
+            Config.Set("seat_available", "false");
+            Config.Set("seat_selected", "false");
+            Config.Set("select_mode", "0");
             RowColumn rowColumn = new RowColumn();
             Wpf.Ui.Controls.MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
             messageBox.Content = rowColumn;
@@ -43,10 +49,17 @@ namespace SchoolSeatMapper
             switch (seat_mode)
             {
                 case 0:
-                    SeatSelector seatSelector = new SeatSelector(ToInt(Config.Get("row")), ToInt(Config.Get("column")));
-                    control.Content = seatSelector;
-                    mix_seat_btn.Content = "자리 선택";
-                    seat_mode = 1;
+                    if (Config.Get("seat_num") != "0")
+                    {
+                        SeatSelector seatSelector = new SeatSelector(ToInt(Config.Get("row")), ToInt(Config.Get("column")));
+                        control.Content = seatSelector;
+                        mix_seat_btn.Content = "자리 선택";
+                        seat_mode = 1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("올바르게 저장했는지 확인하세요", "에러 발생!");
+                    }
                     break;
 
                 case 1:

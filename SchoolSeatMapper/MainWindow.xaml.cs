@@ -38,6 +38,16 @@ namespace SchoolSeatMapper
                 Process.Start(Process.GetCurrentProcess().MainModule.FileName);
                 Application.Current.Shutdown();
             }
+            else
+            {
+                Config.Set("row", "0");
+                Config.Set("column", "0");
+                Config.Set("seat_num", "0");
+                Config.Set("seat_available", "false");
+                Config.Set("seat_selected", "false");
+                Config.Set("select_mode", "0");
+                Config.Set("login", "none");
+            }
 
             DirectoryInfo di = new(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\SchoolSeatMapper");
 
@@ -49,6 +59,7 @@ namespace SchoolSeatMapper
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Navigation.Navigate("자리 배정");
             Navigation.IsPaneOpen = false;
             InitialConfig();
         }
@@ -64,6 +75,7 @@ namespace SchoolSeatMapper
             else
             {
                 box_loginid.Text = Config.Get("login");
+                box_loginid.Visibility = Visibility.Visible;
                 msgbox_login.Visibility = Visibility.Collapsed;
                 login_btn.Visibility = Visibility.Collapsed;
             }

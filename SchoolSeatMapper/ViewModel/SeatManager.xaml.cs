@@ -14,6 +14,7 @@ namespace SchoolSeatMapper
         {
             this.Row = row;
             this.Column = column;
+            Config.Set("Error", "1");
             if (Config.Get("seat_num") == "0")
             {
                 Generate_Seat(row, column);
@@ -32,7 +33,7 @@ namespace SchoolSeatMapper
             Seats = new List<Seat> { };
             for (int i = 1; i <= row * column; i++)
             {
-                Seats.Add(new Seat { Number = i, Available = true, Selected = false });
+                Seats.Add(new Seat { Name = i.ToString(), Available = true, Selected = false });
             }
         }
 
@@ -49,7 +50,7 @@ namespace SchoolSeatMapper
 
         private void save_btn_Click(object sender, RoutedEventArgs e)
         {
-            string num = String.Join(",", Seats.Select(m => m.Number).ToArray());
+            string num = String.Join(",", Seats.Select(m => m.Name).ToArray());
             string available = String.Join(",", Seats.Select(m => !m.Selected).ToArray());
             string selected = String.Join(",", Seats.Select(m => !m.Available).ToArray());
             Config.Set("seat_num", num);
@@ -57,19 +58,19 @@ namespace SchoolSeatMapper
             Config.Set("seat_selected", selected);
         }
 
-        private void SeatsFromString(string numberString, string availableString, string selectedString)
+        private void SeatsFromString(string NameString, string availableString, string selectedString)
         {
             // 각 문자열을 ','를 기준으로 분할하여 배열로 변환
-            string[] numbers = numberString.Split(',');
+            string[] Names = NameString.Split(',');
             /*            string[] availableValues = availableString.Split(',');*/
             string[] selectedValues = selectedString.Split(',');
 
             // 분할된 값들을 사용하여 새로운 Seat 객체 리스트 생성
             Seats = new List<Seat> { };
 
-            for (int i = 0; i < numbers.Length; i++)
+            for (int i = 0; i < Names.Length; i++)
             {
-                Seats.Add(new Seat { Number = int.Parse(numbers[i]), Available = true, Selected = bool.Parse(selectedValues[i]) }); // SeatSelector에서 다시 SeatManager로 값을 불러올 때는 Available 모두 true
+                Seats.Add(new Seat { Name = Names[i], Available = true, Selected = bool.Parse(selectedValues[i]) }); // SeatSelector에서 다시 SeatManager로 값을 불러올 때는 Available 모두 true
             }
         }
     }
