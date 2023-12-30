@@ -36,7 +36,7 @@
             HorizontalAlignment="Center"
             Click="separate_btn_Click"
             Content="분리" />
-        <ItemsControl
+        <ItemsControl x:Name="itemcontrol"
             Grid.Row="1"
             Grid.ColumnSpan="4"
             HorizontalAlignment="Left"

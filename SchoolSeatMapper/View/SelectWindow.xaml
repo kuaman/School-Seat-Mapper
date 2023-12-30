@@ -9,8 +9,6 @@
     Title="분리자 명단"
     Width="400"
     Height="450"
-    Closed="Window_Closed"
-    Loaded="Window_Loaded"
     ResizeMode="NoResize"
     WindowStartupLocation="Manual"
     mc:Ignorable="d">

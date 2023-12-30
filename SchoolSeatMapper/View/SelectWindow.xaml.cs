@@ -13,8 +13,10 @@ namespace SchoolSeatMapper
     /// </summary>
     public partial class SelectWindow : Window
     {
-        public SelectWindow()
+        private int Max;
+        public SelectWindow(int max)
         {
+            Max = max;
             InitializeComponent();
             DataContext = new MainViewModel();
             Height = ((MainWindow)Application.Current.MainWindow).Height;
@@ -24,8 +26,22 @@ namespace SchoolSeatMapper
 
         private void TextBox1_Add()
         {
-            listBox1.Items.Add(textbox1.Text);
-            textbox1.Text = string.Empty;
+            try
+            {
+                if (Convert.ToInt32(textbox1.Text) <= Max)
+                {
+                    listBox1.Items.Add(textbox1.Text);
+                    textbox1.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("오류입니다.");
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -48,7 +64,25 @@ namespace SchoolSeatMapper
                             var cells = worksheet.CellsUsed();
                             foreach (var cell in cells)
                             {
-                                listBox1.Items.Add(cell.Value);
+                                try
+                                {
+                                    if (Convert.ToInt32(cell.Value) <= Max)
+                                    {
+                                        listBox1.Items.Add(cell.Value);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("엑셀 목록은 1,2,3 ... 꼴이어야 합니다.");
+                                    }
+                                }
+                                catch (NullReferenceException)
+                                {
+                                    MessageBox.Show("오류 발생");
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("오류 발생");
+                                }
                             }
                         }
                     }
@@ -78,16 +112,6 @@ namespace SchoolSeatMapper
                 if (textbox1.Text != "")
                     TextBox1_Add();
             }
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-
         }
 
         public event EventHandler<string> DataAdded;

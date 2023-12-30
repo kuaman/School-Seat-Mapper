@@ -25,14 +25,12 @@ namespace SchoolSeatMapper
 
             if (!File.Exists(Cfpath + @"\app.config"))
             {
-                AppDomain.CurrentDomain.SetData("APP_CONFIG_FILE", Cfpath + @"\app.config");
-                AppConfig.Change(Cfpath + @"\app.config");
                 Config.Set("row", "0");
                 Config.Set("column", "0");
                 Config.Set("seat_num", "0");
                 Config.Set("seat_available", "false");
                 Config.Set("seat_selected", "false");
-                Config.Set("select_mode", "0");
+                Config.Set("mode", "0");
                 Config.Set("login", "none");
                 Process.Start(Process.GetCurrentProcess().MainModule.FileName);
                 Application.Current.Shutdown();
@@ -44,7 +42,7 @@ namespace SchoolSeatMapper
                 Config.Set("seat_num", "0");
                 Config.Set("seat_available", "false");
                 Config.Set("seat_selected", "false");
-                Config.Set("select_mode", "0");
+                Config.Set("mode", "0");
                 Config.Set("login", "none");
             }
 
@@ -69,6 +67,7 @@ namespace SchoolSeatMapper
             {
                 Login login = new Login();
                 login.Owner = this;
+                login.DataAdded += Login_DataAdded;
                 login.ShowDialog();
             }
             else
@@ -78,6 +77,14 @@ namespace SchoolSeatMapper
                 msgbox_login.Visibility = Visibility.Collapsed;
                 login_btn.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void Login_DataAdded(object sender, string id)
+        {
+            box_loginid.Text = id;
+            box_loginid.Visibility = Visibility.Visible;
+            msgbox_login.Visibility = Visibility.Collapsed;
+            login_btn.Visibility = Visibility.Collapsed;
         }
     }
 }

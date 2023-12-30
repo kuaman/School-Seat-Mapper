@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 
@@ -35,6 +36,11 @@ namespace SchoolSeatMapper
                         if (pw.Text == titleContent)
                         {
                             Config.Set("login", id.Text);
+                            StringBuilder combinedString = new StringBuilder();
+                            combinedString.Append(id.Text);
+
+                            // 이벤트를 통해 결합된 문자열을 전송
+                            DataAdded?.Invoke(this, combinedString.ToString().Trim());
                             this.Close();
                         }
                     }
@@ -51,5 +57,7 @@ namespace SchoolSeatMapper
                 }
             }
         }
+
+        public event EventHandler<string> DataAdded;
     }
 }
