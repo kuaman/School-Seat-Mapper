@@ -14,7 +14,6 @@ namespace SchoolSeatMapper
         {
             this.Row = row;
             this.Column = column;
-            Config.Set("Error", "1");
             if (Config.Get("seat_num") == "0")
             {
                 Generate_Seat(row, column);

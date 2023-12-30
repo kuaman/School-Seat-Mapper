@@ -5,9 +5,13 @@
     <TargetFramework>net8.0-windows7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <FileVersion>0.9.0.0</FileVersion>
-    <AssemblyVersion>0.9.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <ApplicationIcon>Resources\Main.ico</ApplicationIcon>
+    <PackAsTool>False</PackAsTool>
+    <PackageIcon>Main.png</PackageIcon>
+    <RepositoryUrl>https://github.com/kuaman/School-Seat-Mapper</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/kuaman/School-Seat-Mapper</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +29,13 @@
     <Content Include="Resources\Main.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Main.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

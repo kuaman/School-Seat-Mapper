@@ -284,8 +284,8 @@ namespace SchoolSeatMapper
         private void Rand_Seat(List<string?> separateList)
         {
             var query7 = from Seat seat in Seats1    // Available == false => Name = null
-                        where seat.Available == false
-                        select seat;
+                         where seat.Available == false
+                         select seat;
             foreach (Seat seat7 in query7)
             {
                 seat7.Name = null;
@@ -324,15 +324,15 @@ namespace SchoolSeatMapper
             }
 
             var query9 = from Seat seat in Seats1
-                          where seat.Available == true
-                          select seat;
+                         where seat.Available == true
+                         select seat;
             List<string?> Counts1 = Enumerable.Range(1, query9.Count()).Select(i => i.ToString()).ToList();
             List<string?> Counts2 = new List<string?>();
             Counts2 = Counts1.Except(Selected).ToList();
 
             var query10 = from Seat seat in Seats1
-                         where seat.Available == true && seat.Selected == false
-                         select seat;
+                          where seat.Available == true && seat.Selected == false
+                          select seat;
             Counts2 = Counts2.OrderBy(x => Guid.NewGuid()).ToList();
             foreach (Seat seat1 in query10)
             {
